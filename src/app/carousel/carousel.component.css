@@ -1,0 +1,7 @@
+.picsum-img-wrapper {
+    height: 26rem;
+}
+
+.picsum-img-wrapper img {
+    max-width: 100%;
+}

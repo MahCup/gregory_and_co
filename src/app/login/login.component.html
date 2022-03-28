@@ -1,0 +1,22 @@
+<div class="sign-form">
+
+    
+    <div class="text-center border border-light p-5">
+        <div class="sign-form">
+            <p class="h4 mb-4">Entrar</p>
+
+            <!-- CPF -->
+            <input type="number" id="cpf" class="form-control mb-4" placeholder="CPF" [(ngModel)]="log_user.cpf">
+        
+            <!-- Password -->
+            <input type="password" id="defaultRegisterFormPassword" class="form-control mb-4" placeholder="Password"
+                aria-describedby="defaultRegisterFormPasswordHelpBlock" [(ngModel)]="log_user.senha">
+        
+            <!-- Sign up button -->
+            <button type="button" class="btn btn-dark" (click)="onLogin()">Entrar</button>
+        
+        
+        </div>
+
+    </div>
+</div>

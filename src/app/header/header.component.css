@@ -1,0 +1,17 @@
+.navbar-toggler-icon {
+    color: white;
+}
+
+#cart :hover {
+    color: #0d6efd;
+}
+
+.btn-link {
+    color: white;
+}
+
+.link {
+    text-decoration: none;
+    color: inherit;
+}
+

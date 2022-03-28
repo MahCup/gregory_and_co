@@ -1,0 +1,45 @@
+<div class="sign-form">
+
+    
+    <div class="text-center border border-light p-5">
+        <div class="sign-form">
+            <p class="h4 mb-4">Cadastro</p>
+        
+            <!-- Nome -->
+            <input type="text" id="name" class="form-control mb-4" placeholder="Nome" [(ngModel)]="user.nome_completo">
+        
+        
+            <!-- CPF -->
+            <input type="number" id="cpf" class="form-control mb-4" placeholder="CPF" [(ngModel)]="user.cpf">
+        
+            <!-- Gênero -->
+            <select class="form-control mb-4" id="gender" [(ngModel)]="user.genero">
+                <option disabled selected value> Gênero </option>
+                <option>Feminino</option>
+                <option>Masculino</option>
+                <option>Outro</option>
+            </select>
+        
+            <!-- Celular -->
+            <input type="number" id="phone" class="form-control mb-4" placeholder="Celular"
+                aria-describedby="defaultRegisterFormPhoneHelpBlock" [(ngModel)]="user.celular">
+        
+            <!-- Telefone -->
+            <input type="number" id="telephone" class="form-control mb-4" placeholder="Telefone"
+                aria-describedby="defaultRegisterFormPhoneHelpBlock" [(ngModel)]="user.telefone">
+        
+            <!-- E-mail -->
+            <input type="email" id="defaultRegisterFormEmail" class="form-control mb-4" placeholder="E-mail" [(ngModel)]="user.email">
+        
+            <!-- Password -->
+            <input type="password" id="defaultRegisterFormPassword" class="form-control mb-4" placeholder="Password"
+                aria-describedby="defaultRegisterFormPasswordHelpBlock" [(ngModel)]="user.senha">
+        
+            <!-- Sign up button -->
+            <button type="button" class="btn btn-dark" (click)="onSubmitSignUp()">Cadastrar</button>
+        
+        
+        </div>
+
+    </div>
+</div>
