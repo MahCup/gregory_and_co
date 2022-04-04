@@ -1,1 +1,37 @@
 <app-carousel></app-carousel>
+
+<div class="m-4">
+
+    <div class="text-center row mb-4">
+        <div class="col-sm mb-4" *ngFor="let product of products">
+            <div class="card" style="width: 18rem;">
+                <img src={{product.image}} class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{product["nome"]}}</h5>
+                    <p class="card-text">R$ {{product["preco"]}},00</p>
+                    <a href="#" class="btn btn-dark">Comprar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-end">
+            <li class="page-item">
+                <a class="page-link" href="#" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                </a>
+            </li>
+            <li class="page-item active"><a class="page-link">1</a></li>
+            <li class="page-item"><a class="page-link">2</a></li>
+            <li class="page-item"><a class="page-link">3</a></li>
+            <li class="page-item">
+                <a class="page-link" href="#" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</div>
