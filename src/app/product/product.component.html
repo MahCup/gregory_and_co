@@ -1,0 +1,147 @@
+<div class="container text-center p-5">
+    <!-- Go back button -->
+    <button type="button" class="btn btn-dark mb-4" (click)="goBack()">Voltar</button>
+
+    <p class="h5 mb-4">Prezado administrador, para adicionar ou deletar um produto, use as estruturas abaixo:</p>
+    <div class="row mb-4">
+        <div class="col-sm">
+            <div class="text-center border border p-5">
+                <div class="sign-form">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th scope="col">ID</th>
+                                <th scope="col">Produto</th>
+                                <th scope="col">Preço</th>
+                                <th scope="col">Número</th>
+                                <th scope="col">Cor</th>
+                                <th scope="col">Palmilha</th>
+                                <th scope="col">Material</th>
+                                <th scope="col">Público</th>
+                                <th scope="col">Fechamento</th>
+                                <th scope="col">Amortecedor</th>
+                                <th scope="col">Marca</th>
+                              </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let product of products">
+                                <td>
+                                    {{product["id"]}}
+                                </td>
+                                <td>
+                                    {{product["nome"]}}
+                                </td>
+                                <td>
+                                    {{product["preco"]}}
+                                </td>
+                                <td>
+                                    {{product["numeracao"]}}
+                                </td>
+                                <td>
+                                    {{product["cor"]}}
+                                </td>
+                                <td>
+                                    {{product["palmilha_anti_odor"]}}
+                                </td>
+                                <td>
+                                    {{product["material"]}}
+                                </td>
+                                <td>
+                                    {{product["publico"]}}
+                                </td>
+                                <td>
+                                    {{product["tipo_de_fechamento"]}}
+                                </td>
+                                <td>
+                                    {{product["amortecedor"]}}
+                                </td>
+                                <td>
+                                    {{product["brand_id"]}}
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm">
+            <div class="text-center border border p-5">
+                <div class="sign-form">
+
+                    <p class="h4 mb-4">Cadastro</p>
+
+                    <!-- Nome do produto -->
+                    <input type="text" id="name" class="form-control mb-4" placeholder="Nome"
+                        [(ngModel)]="product.nome">
+
+                    <!-- Preço do produto -->
+                    <input type="number" id="preco" class="form-control mb-4" placeholder="Preço"
+                        [(ngModel)]="product.preco">
+
+                    <!-- Numeração do produto -->
+                    <input type="number" id="number" class="form-control mb-4" placeholder="Número"
+                        [(ngModel)]="product.numeracao">
+
+                    <!-- Cor do produto -->
+                    <input type="text" id="color" class="form-control mb-4" placeholder="Cor" [(ngModel)]="product.cor">
+
+                    <!-- Palmilha anti odor? -->
+                    <select id="palmilha" class="form-select mb-4" [(ngModel)]="product.palmilha_anti_odor">
+                        <option value="default" disabled selected>Selecione a palmilha</option>
+                        <option [value]="true">Com palmilha anti-odor</option>
+                        <option [value]="false">Sem palmilha anti-odor</option>
+                    </select>
+
+                    <!-- Material do produto -->
+                    <input type="text" id="material" class="form-control mb-4" placeholder="Material"
+                        [(ngModel)]="product.material">
+
+                    <!-- Publico do produto -->
+                    <input type="text" id="publico" class="form-control mb-4" placeholder="Público"
+                        [(ngModel)]="product.publico">
+
+                    <!-- Tipo de fechamento -->
+                    <input type="text" id="fechamento" class="form-control mb-4" placeholder="Tipo de fechamento"
+                        [(ngModel)]="product.tipo_de_fechamento">
+
+                    <!-- Amortecedor -->
+                    <select id="amortecedor" class="form-select mb-4" [(ngModel)]="product.amortecedor">
+                        <option value="default" disabled selected>Selecione o amortecedor</option>
+                        <option [value]="true">Possui amortecedor</option>
+                        <option [value]="false">Não possui amortecedor</option>
+                    </select>
+
+                    <!-- Seleção da marca -->
+                    <select id="select_brand" class="form-select mb-4" [(ngModel)]="product.brand_id">
+                        <option disabled selected value="default">Selecione a marca</option>
+                        <option *ngFor="let brand of brands | keyvalue" [value]="brand.key">{{brand.value}}</option>
+                    </select>
+
+                    <!-- Adicionar marca button -->
+                    <button type="button" class="btn btn-dark mb-4" (click)="addProduct()">Cadastrar produto</button>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-sm">
+            <div class="text-center border border p-5">
+                <div class="sign-form">
+
+                    <p class="h4 mb-4">Deleção por ID</p>
+
+                    <!-- Seleção da marca -->
+                    <select id="select_product" class="form-select mb-4" [(ngModel)]="selected_product.id">
+                        <option disabled selected value="default">Selecione o ID do produto</option>
+                        <option *ngFor="let product of products" > {{ product["id"] }} </option>
+                    </select>
+
+                    <!-- Sign up button -->
+                    <button type="button" class="btn btn-dark mb-4" (click)="delProduct()">Deletar marca</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

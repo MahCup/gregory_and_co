@@ -24,6 +24,10 @@ export class BrandComponent implements OnInit {
     this.getBrands();
   }
 
+  goBack() {
+    window.location.href = "admin";
+  }
+
   async addBrand() {
     const resposta = await fetch('http://localhost:8080/brand', {
       method: 'POST',
@@ -42,7 +46,7 @@ export class BrandComponent implements OnInit {
   }
 
   async getBrands() {
-    const brands = await fetch('http://localhost:8080/brand');
+    const brands = await fetch('http://localhost:8080/brand/list');
     const json = await brands.json();
 
     json.forEach((repo: any) => {

@@ -1,4 +1,7 @@
 <div class="container text-center p-5">
+    <!-- Go back button -->
+    <button type="button" class="btn btn-dark mb-4" (click)="goBack()">Voltar</button>
+    
     <p class="h5 mb-4">Prezado administrador, para adicionar ou deletar uma marca, use as estruturas abaixo:</p>
     <div class="row">
         <div class="col-sm">
@@ -10,7 +13,7 @@
                         </thead>
                         <tbody>
                             <tr *ngFor="let brand of brands | keyvalue">
-                                <td >
+                                <td>
                                     {{brand.value}}
                                 </td>
                             </tr>
