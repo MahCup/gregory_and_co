@@ -29,7 +29,7 @@ export class BrandComponent implements OnInit {
   }
 
   async addBrand() {
-    const resposta = await fetch('http://localhost:8080/brand', {
+    const resposta = await fetch('http://localhost:8080/brand/add', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
