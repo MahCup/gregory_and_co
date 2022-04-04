@@ -1,0 +1,56 @@
+<div class="container text-center p-5">
+    <p class="h5 mb-4">Prezado administrador, para adicionar ou deletar uma marca, use as estruturas abaixo:</p>
+    <div class="row">
+        <div class="col-sm">
+            <div class="text-center border border p-5">
+                <div class="sign-form">
+                    <table class="table table-striped">
+                        <thead>
+                            <th scope="col">Marcas Cadastradas</th>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let brand of brands | keyvalue">
+                                <td >
+                                    {{brand.value}}
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm">
+            <div class="text-center border border p-5">
+                <div class="sign-form">
+
+                    <p class="h4 mb-4">Cadastro</p>
+
+                    <!-- Nome da marca -->
+                    <input type="text" id="name" class="form-control mb-4" placeholder="Nome" [(ngModel)]="brand.nome">
+
+                    <!-- Adicionar marca button -->
+                    <button type="button" class="btn btn-dark mb-4" (click)="addBrand()">Cadastrar marca</button>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-sm">
+            <div class="text-center border border p-5">
+                <div class="sign-form">
+
+                    <p class="h4 mb-4">Deleção</p>
+
+                    <!-- Seleção da marca -->
+                    <select id="select_brand" class="form-select mb-4" [(ngModel)]="selected_brand.nome">
+                        <option disabled selected value="default">Selecione a marca</option>
+                        <option *ngFor="let brand of brands | keyvalue" [value]="brand.value">{{brand.value}}</option>
+                    </select>
+
+                    <!-- Sign up button -->
+                    <button type="button" class="btn btn-dark mb-4" (click)="delBrand()">Deletar marca</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

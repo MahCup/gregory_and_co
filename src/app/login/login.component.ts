@@ -18,7 +18,11 @@ export class LoginComponent implements OnInit {
   }
 
   onLogin() {
-    console.log("Entrar")
+    if (this.log_user.cpf == "10825180694" && this.log_user.senha == "admin") {
+      window.location.href = "admin";
+    } else {
+      console.log("Entrar")
+    }
   }
 
 }

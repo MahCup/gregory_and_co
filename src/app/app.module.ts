@@ -17,6 +17,10 @@ import { LayoutComponent } from './layout/layout.component';
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
+import { AdminComponent } from './admin/admin.component';
+import { BrandComponent } from './brand/brand.component';
+import { ProductComponent } from './product/product.component';
+import { InventoryComponent } from './inventory/inventory.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +31,11 @@ import { LoginComponent } from './login/login.component';
     SignComponent,
     LayoutComponent,
     HomeComponent,
-    LoginComponent
+    LoginComponent,
+    AdminComponent,
+    BrandComponent,
+    ProductComponent,
+    InventoryComponent
   ],
   imports: [
     BrowserModule,
